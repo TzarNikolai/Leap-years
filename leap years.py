@@ -1,7 +1,3 @@
-# getting input from user
-
-
-#calculating if the year provided is a leap year or not
 def calc_leap_year(n):
     if n % 4  == 0 and n % 100 != 0 or n % 400 == 0:
         return True
@@ -12,15 +8,15 @@ def calc_days(first_year, last_year):
     days = 0
     for n in range(first_year -1, last_year):
         if calc_leap_year(n) == True:
-            days += 365
-        else:
             days += 366
+        else:
+            days += 365
     return days
 
 first_year = int(input("Year 1? "))
 last_year = int(input("Year 2? "))
-# confirming if functon works
 
 num_days = calc_days(first_year, last_year)
 
 print(f"number of days: {num_days}")
+
